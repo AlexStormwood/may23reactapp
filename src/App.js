@@ -20,7 +20,7 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log("Data from /users/ is: " + JSON.stringify(data));
-        setUserList(data);
+        setUserList(data.result);
       })
     }
 
