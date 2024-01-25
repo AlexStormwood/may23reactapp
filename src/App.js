@@ -15,8 +15,12 @@ function App() {
     if (backendUrl === ""){
       // do nothing
     } else {
-      console.log(process.env.REACT_APP_BACKEND_URL);
-      setUserList("");
+      console.log(backendUrl, process.env.REACT_APP_BACKEND_URL);
+      fetch(backendUrl + "users/")
+      .then(response => response.json())
+      .then(data => {
+        console.log("Data from /users/ is: " + JSON.stringify(data));
+      })
     }
 
   }, [backendUrl])
