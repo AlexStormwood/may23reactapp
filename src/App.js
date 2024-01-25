@@ -16,6 +16,7 @@ function App() {
       // do nothing
     } else {
       console.log(process.env.REACT_APP_BACKEND_URL);
+      setUserList("");
     }
 
   }, [backendUrl])
